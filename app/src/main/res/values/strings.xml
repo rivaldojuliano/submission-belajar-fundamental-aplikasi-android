@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Github User App</string>
+    <string name="type_username">Ketik username…</string>
+    <string name="image_profile">Image Profile</string>
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="repository">Repository</string>
+</resources>
