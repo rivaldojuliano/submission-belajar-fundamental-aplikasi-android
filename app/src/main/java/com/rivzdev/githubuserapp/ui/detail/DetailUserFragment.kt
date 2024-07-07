@@ -67,7 +67,7 @@ class DetailUserFragment : Fragment() {
     }
 
     private fun setTabLayoutWithViewPager() {
-        val sectionPagerAdapter = SectionPagerAdapter(this)
+        val sectionPagerAdapter = SectionPagerAdapter(this, args.user)
         val viewpager: ViewPager2 = requireView().findViewById(R.id.view_pager)
         viewpager.adapter = sectionPagerAdapter
         val tabs: TabLayout = requireView().findViewById(R.id.tabs)

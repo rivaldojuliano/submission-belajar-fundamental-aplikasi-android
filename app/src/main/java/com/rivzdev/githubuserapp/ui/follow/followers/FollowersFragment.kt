@@ -16,15 +16,10 @@ import com.rivzdev.githubuserapp.ui.detail.DetailUserFragmentArgs
 import com.rivzdev.githubuserapp.ui.follow.FollowAdapter
 import com.rivzdev.githubuserapp.ui.search.SearchUserAdapter
 
-class FollowersFragment : Fragment() {
+class FollowersFragment(private val user: ItemsItem) : Fragment() {
 
     private var _binding: FragmentFollowersBinding? = null
     private val binding get() = _binding!!
-
-    private val args by navArgs<DetailUserFragmentArgs>()
-    private val user by lazy {
-        args.user
-    }
 
     private val viewModel by viewModels<FollowersViewModel>()
 
