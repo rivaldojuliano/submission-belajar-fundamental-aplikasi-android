@@ -1,5 +1,6 @@
 package com.rivzdev.githubuserapp.ui.detail.viewpager
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.rivzdev.githubuserapp.data.source.remote.ItemsItem
@@ -13,11 +14,19 @@ class SectionPagerAdapter(fragment: Fragment, private val user: ItemsItem) : Fra
         var fragment: Fragment? = null
 
         when (position) {
-            0 -> fragment = FollowersFragment(user)
+            0 -> {
+                fragment = FollowersFragment()
+                fragment.arguments = Bundle().apply {
+                    putString(EXTRA_USER, user.login)
+                }
+            }
             1 -> fragment = FollowingFragment()
         }
 
         return fragment as Fragment
     }
 
+    companion object {
+        const val EXTRA_USER = "extra_user"
+    }
 }
